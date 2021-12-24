@@ -1,0 +1,102 @@
+
+<mat-sidenav-container autosize >
+
+    <mat-sidenav #drawer  mode='push'><!--SideNav-->
+       
+        <div mat-menu-item disabled class="menu-header" >
+            Admin Panel
+        </div>   
+        <button mat-menu-item  class="btn" (click)="drawer.toggle()">
+            <i class="fa fa-arrow-left fa-lg"></i>Back
+        </button>
+       
+        <mat-divider></mat-divider>
+       
+        <button mat-menu-item routerLink="/dashboard" class="btn" routerLinkActive='active-link'>
+            <i class="fa fa-tachometer fa-lg"></i>Dashboard
+        </button>
+       
+        <mat-divider></mat-divider>
+       
+        <mat-accordion >
+            <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                    <mat-panel-title><i class="fa fa-shopping-cart fa-lg"></i>
+                        Products
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <button mat-menu-item routerLink="/product/add">Add Product</button>
+                <button mat-menu-item routerLink="/product">Manage Product</button>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item routerLink='/brands'  class="btn" routerLinkActive='active-link'>
+            <i class="fa fa-tags fa-lg"></i>Brands
+        </button>
+       
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item routerLink='/category'  class="btn" routerLinkActive='active-link'>
+            <i class="fa fa-list-alt fa-lg"></i>
+            Category</button>
+       
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item routerLink='/attributes'  class="btn" routerLinkActive='active-link'>
+            <i class="fa fa-eye fa-lg"></i>
+            Attributes</button>
+       
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item routerLink='/stores'  class="btn" routerLinkActive='active-link'>
+            <i class="fa fa-shopping-bag fa-lg"></i>Stores
+        </button>
+        
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item routerLink='/user'  class="btn" routerLinkActive='active-link'>
+            <i class="fa fa-users fa-lg"></i>Users
+        </button>
+       
+        <mat-divider></mat-divider>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content                    >
+        <!--Toolbar-->
+        <div >
+        <mat-toolbar color='primary' hidden>
+            <mat-toolbar-row fxLayout='row'>
+                <div fxFlex='20' >
+                    <button mat-button (click)="drawer.toggle()" class="btn-nav"><mat-icon class="icon">list</mat-icon></button>
+                    <span>
+                        <img src="../../assets/images/icon.png" alt="" srcset="">
+                        ORI
+                    </span>
+                   
+                </div>
+                <div fxFlex='40'><!--Menu-->
+                    <mat-menu></mat-menu><!--removing this line destroys mat-menu buttons-->
+                </div>
+                <div fxFlex='40' fxLayoutAlign='end end'><!--Buttons-->
+                    <button mat-button class="nav-button" (click)='logOut()'>Log out</button>
+                    
+                </div>
+        
+            </mat-toolbar-row>
+        </mat-toolbar>
+        </div>  
+        <!--Toolbar-->
+        <!--Main View-->
+        <router-outlet ></router-outlet>
+        
+        <div class="footer">
+            <mat-divider></mat-divider>
+            <p class='footer-text'><i class='fa fa-copyright fa-sm'></i>Copyright {{date}}-{{date+1}}. All rights reserved.</p>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

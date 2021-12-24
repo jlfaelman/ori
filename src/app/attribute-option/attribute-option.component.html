@@ -1,0 +1,18 @@
+<div class="main">
+    <h1 mat-dialog-title>Add Option</h1>
+        <form>
+            <div mat-dialog-content >
+                <div>
+                    <mat-form-field color='accent' appearance='outline'>
+                        <mat-label>Option</mat-label>
+                        <input type="text" matInput name="option" [(ngModel)]='option' autocomplete="off">
+                    </mat-form-field>
+                </div>  
+            </div>
+            <div mat-dialog-mat-dialog-actions>
+                <button mat-raised-button color='warn' mat-dialog-close>Close</button>
+                <button mat-raised-button color='accent' class="submit" (click)='onAdd(attribute.id,attribute.attribute,option)' mat-dialog-close>Submit</button>
+                
+            </div>
+        </form>
+    </div>

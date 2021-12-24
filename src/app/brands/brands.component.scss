@@ -1,0 +1,36 @@
+.title{
+    margin: 1rem 2rem;
+    font-size: 30px;
+}
+.panel{
+    width: 100%;
+}
+i{
+    margin: 0 .25rem;
+    text-align: center;
+    vertical-align: middle;
+}
+mat-form-field{
+    margin: 0 1rem !important;
+    width: 90% !important;
+}
+mat-card{
+    margin: 1rem 2rem;
+}
+table{
+    width:100% !important;
+}
+td{
+    width: 15rem !important;
+}
+.red-btn{
+    background: #d32f2f !important; 
+    color: white !important; 
+}
+.btn-actions{
+    margin: 0 5px !important;
+}
+mat-expansion-panel, mat-card{
+    width: 95% ;
+    margin: 1rem auto;
+}

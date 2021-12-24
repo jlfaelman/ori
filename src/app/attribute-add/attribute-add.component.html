@@ -1,0 +1,18 @@
+<div class="main">
+    <h1 mat-dialog-title>Add Attribute</h1>
+        <form>
+            <div mat-dialog-content >
+                <div>
+                    <mat-form-field color='accent' appearance='outline'>
+                        <mat-label>Attribute</mat-label>
+                        <input type="text" matInput name="attribute" [(ngModel)]='attribute'  autocomplete="off">
+                    </mat-form-field>
+                </div>  
+            </div>
+            <div mat-dialog-mat-dialog-actions>
+                <button mat-raised-button color='warn' mat-dialog-close>Close</button>
+                <button mat-raised-button color='accent' class="submit" (click)='onAdd(attribute)' mat-dialog-close>Submit</button>
+                
+            </div>
+        </form>
+    </div>

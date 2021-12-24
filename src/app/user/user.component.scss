@@ -1,0 +1,43 @@
+.title{
+    font-size: 30px;
+    margin: 1rem 2rem ; 
+}
+mat-card{
+    margin: 2% auto!important;
+    width: 75%;
+}
+i{
+    margin: 0 .25rem ;
+    vertical-align: middle !important;
+}
+mat-form-field{
+    margin:1% 1rem !important;
+    width: 90%;
+}
+.form-field{
+    text-align: center;
+}
+.btn-register{
+    margin-top: 1.5% ;
+}
+mat-expansion-panel, mat-card{
+    width: 95% ;
+    margin: 1rem auto;
+}
+table{
+    width: 100% !important;
+}
+td,th{
+    width: 15rem !important
+}
+.filter{
+    width: 15rem !important;
+    float: right;
+}
+.red-btn{
+    background: #d32f2f !important; 
+    color: white !important; 
+}
+.btn-actions{
+    margin: 0 5px !important;
+}

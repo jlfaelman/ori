@@ -1,0 +1,65 @@
+<div fxLayout='column'>
+    <div class='title'>
+        Manage Category
+    </div>
+    <div class="panel">
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title><i class="fa fa-plus-circle "></i> Add Category</mat-panel-title>
+                    <mat-panel-description></mat-panel-description>
+                </mat-expansion-panel-header> 
+                <div fxLayout='row' fxLayout.lt-lg='column' >
+                    <mat-form-field>
+                        <mat-label>Category</mat-label>
+                        <input type="text" name='category' matInput color='primary' [(ngModel)]='category' autocomplete="off">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Status</mat-label>
+                        <mat-select name='status' [(ngModel)]='status'>
+                            <mat-option value='active'>Active</mat-option>
+                            <mat-option value='inactive'>Inactive</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <button mat-button color='primary' (click)='onAdd(category,status)'>Submit</button>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="table">
+        <mat-card>
+            <table mat-table matSort [dataSource]='dataSource'>
+                <ng-container matColumnDef='category'>
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef>Category</th>
+                    <td mat-cell *matCellDef='let cat'>{{cat.category | titlecase}}</td>
+                </ng-container>
+                <ng-container matColumnDef='status'>
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef>Status</th>
+                    <td mat-cell *matCellDef='let cat'>{{cat.status | titlecase}}</td>
+                </ng-container>
+                <ng-container matColumnDef='_id'>
+                    <th mat-header-cell *matHeaderCellDef>Action</th>
+                    <td mat-cell *matCellDef='let cat'>
+                        <div [hidden]='setSize()'>
+                            <button mat-flat-button color='warn' class="btn-actions"  (click)='onEdit(cat.category,cat.status,cat._id)'><i class="fa fa-edit fa-lg"></i>Edit</button>
+                            <button mat-flat-button class="btn-actions red-btn" (click)='onDelete(cat._id)'><i class="fa fa-trash-o fa-lg"></i>Delete</button>
+                        </div>
+                        <div [hidden]='!setSize()'> 
+                            <button mat-flat-button [matMenuTriggerFor]='tableMenu'><i class="fa fa-list fa-lg"></i></button>
+                            <mat-menu #tableMenu>
+                                <button mat-menu-item (click)='onEdit(cat.category,cat.status,cat._id)'><i class="fa fa-edit fa-lg"></i>Edit</button>
+                                <button mat-menu-item (click)='onDelete(cat._id)' ><i class="fa fa-trash-o fa-lg"></i>Delete</button>
+                            </mat-menu>
+                        </div>
+                    </td>
+                </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef='categoryColumns'></tr>
+                <tr mat-row *matRowDef='let row; columns: categoryColumns'></tr>
+            </table>
+            <mat-paginator  [pageSize]='10' [hidePageSize]='true' > </mat-paginator>
+        </mat-card>
+    </div>
+
+</div>

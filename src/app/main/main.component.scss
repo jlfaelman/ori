@@ -1,0 +1,48 @@
+span{
+    margin: auto 1rem;
+}
+.icon{
+    text-align: center;
+    vertical-align: middle;
+
+}
+.nav-button{
+    margin: auto .5rem;
+}
+.btn-nav{
+    width: 25% !important;
+}
+
+mat-sidenav-container{
+    height: 100%;
+    
+}
+mat-sidenav{
+    min-width: 250px;
+   
+}
+.menu-header{
+    text-align: center;
+    font-size: 25px;
+    background: #0d47a1;
+    color: white;
+    padding-top: 16px;
+}
+i{
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 .85rem;
+
+}
+.footer{
+    margin-top: 5%;
+}
+.footer-text{
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+img{
+    max-width: 35px;
+    vertical-align: middle;
+    text-align: center;
+}

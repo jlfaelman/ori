@@ -1,0 +1,43 @@
+<div class="main">
+    <h1 mat-dialog-title>Edit User</h1>
+
+        <div mat-dialog-content >
+            <div>
+                <mat-form-field color='accent' appearance='outline'>
+                    <mat-label>First Name</mat-label>
+                    <input type="text" matInput name="first" [(ngModel)]='userData.firstname' autocomplete="off">
+                </mat-form-field>
+            </div>  
+
+            <div>
+                <mat-form-field color='accent' appearance='outline'>
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" matInput name="last" [(ngModel)]='userData.lastname' autocomplete="off">
+                </mat-form-field>
+            </div>  
+            <div>
+                <mat-form-field color='accent' appearance='outline'>
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput name="email" [(ngModel)]='userData.email' autocomplete="off">
+                </mat-form-field>
+            </div>  
+            <div>
+                <mat-form-field color='accent' appearance='outline'>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput name="password" [(ngModel)]='userData.password' autocomplete="off">
+                </mat-form-field>
+            </div>  
+            <div>
+                <mat-form-field color='accent' appearance='outline'>
+                    <mat-label>Confirm Password</mat-label>
+                    <input type="password" matInput name="confirm" [(ngModel)]='userData.confirm' autocomplete="off">
+                </mat-form-field>
+            </div>  
+
+        </div>
+        <div mat-dialog-mat-dialog-actions>
+            <button mat-raised-button color='warn' mat-dialog-close>Close</button>
+            <button mat-raised-button color='accent' class="submit"  mat-dialog-close (click)='onUpdate(userData._id,userData.email,userData.firstname,userData.lastname,userData.password,userData.confirm)'>Submit</button>
+        </div>
+
+</div>

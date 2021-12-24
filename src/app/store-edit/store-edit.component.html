@@ -1,0 +1,26 @@
+<div class="main">
+    <h1 mat-dialog-title>Edit Store</h1>
+    <form>
+        <div mat-dialog-content >
+            <div>
+                <mat-form-field color='accent' appearance='outline'>
+                    <mat-label>Store</mat-label>
+                    <input type="text" matInput name="storeName" [(ngModel)]='Storedata.store'>
+                </mat-form-field>
+            </div>  
+            <div>
+                <mat-form-field color='accent' appearance='outline'>
+                    <mat-label>Status</mat-label>
+                    <mat-select name='storeStatus' [(ngModel)]='Storedata.status'>
+                        <mat-option value="Active">Active</mat-option>
+                        <mat-option value="Inactive">Inactive</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div> 
+        </div>
+        <div mat-dialog-mat-dialog-actions>
+            <button mat-raised-button color='warn' mat-dialog-close>Close</button>
+            <button mat-raised-button color='accent' class="submit" (click)="onSubmit(Storedata.store,Storedata.status,Storedata._id)" mat-dialog-close>Submit</button>
+        </div>
+    </form>
+</div>

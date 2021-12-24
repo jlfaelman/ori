@@ -1,0 +1,57 @@
+
+i{
+    margin:0 .5rem !important;
+}
+.center{
+    margin: auto !important;
+}
+.status{
+    height:3rem;
+}
+.title{
+    margin: 1rem 2rem; 
+    font-size: 30px;
+}
+.btn{
+    margin-left: 2%;
+}
+ 
+mat-card{
+    height: 80% !important;
+    margin: 1% 1% !important;
+
+}
+mat-card-title{
+    font-size: 30px !important;
+    margin: 1rem 0rem !important
+}
+table{
+    width: 100%;
+    vertical-align: middle !important;
+    
+}
+td,th{
+    width: 15rem !important
+}
+.actions{
+    text-align: center;
+    margin-top: 5px !important;
+}
+.btn-actions{
+    margin: 0 5px !important;
+}
+.table-text{
+   padding-top: 1rem !important;
+}
+
+input[type="text"]:disabled, mat-select:disabled, mat-option:disabled {
+    color: black !important;
+}
+.red-btn{
+    background: #d32f2f !important; 
+    color: white !important; 
+}
+.filter{
+    float: right !important;
+    margin-right: 1rem !important;
+}

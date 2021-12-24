@@ -1,0 +1,36 @@
+<div fxLayout='row'class="main" >
+    <div fxFlex='30' fxFlex.lt-md='90'>
+
+        <div class='img-div'>
+            <img  src="../../assets/images/icon.png" alt="logo">
+            <p class="img-text">ORI</p>
+        </div>
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+        
+            <mat-card-content>
+                <!-- Email -->
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input type="text" [(ngModel)]='user.email' matInput placeholder="email@example.com">
+                </mat-form-field>
+                <!-- Password -->
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [(ngModel)]='user.password'>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color='primary' (click)='onLogin(user.email,user.password)'>Login</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div fxFlex='70' fxFlex.lt-md='10' fxHide.lt-md class="side">1</div>
+</div>
+<div class="footer">
+    <mat-divider></mat-divider>
+    <p class='footer-text'><i class='fa fa-copyright fa-sm'></i>Copyright {{date}}-{{date+1}}. All rights reserved.</p>
+</div>

@@ -1,0 +1,88 @@
+<div fxLayout='column'>
+    <div class="title">
+        Manage Products
+    </div>
+    <div fxLayout='row' >
+        <mat-card fxFlex='90'>
+            <form [formGroup]='productForm' (ngSubmit)='onSubmit()' enctype="multipart/form-data">
+            <mat-card-header>
+                <mat-card-title> <i class="fa fa-shopping-cart fa-lg"></i>Add Product</mat-card-title>            
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <div fxLayout='column'>
+                        <div class='image'>
+                            <img [src]="imgURL" [hidden]='!imgURL' width='250px' height="200px">
+                            <img src="../../assets/images/No_image_available.svg" alt="" [hidden]='imgURL' width='250px' height="200px">
+                        </div>
+                        <div class="imageinput">
+                            <input #inputFile type="file" style="display: none;" (change)='onSelectedImage($event)'>
+                            <button type="button" (click)='inputFile.click()' mat-fab color='primary'><i class="fa fa-plus fa-lg"></i></button>
+                            <span class="imgText" [hidden]='!imgMsg'>{{ imgMsg }}</span>
+                            <span class="imgText" [hidden]='imgMsg'>No image selected.</span>
+                        </div>
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput  formControlName="productname">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>SKU</mat-label>
+                            <input type="text" matInput  formControlName="sku">
+                        </mat-form-field>
+                        
+                        <mat-form-field>
+                            <mat-label>Quantity</mat-label>
+                            <input type="text" matInput  formControlName="quantity">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Price</mat-label>
+                            <input type="number" matInput  formControlName="price">
+                        </mat-form-field>
+
+                        <mat-form-field >
+                            <mat-label>Brand</mat-label>
+                            <mat-select formControlName='brand'>
+                                    <mat-option *ngFor='let brand of brandData' [value]='brand.brand'>{{ brand.brand |titlecase}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field >
+                            <mat-label>Store</mat-label>
+                            <mat-select formControlName='store'>
+                                    <mat-option *ngFor='let store of storeData' [value]='store.store'>{{ store.store |titlecase}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field >
+                            <mat-label>Category</mat-label>
+                            <mat-select formControlName='category'>
+                                    <mat-option *ngFor='let category of categoryData' [value]='category.category'>{{ category.category |titlecase}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field *ngFor='let attribute  of attributeData' >
+                            <mat-label>{{ attribute.attribute | titlecase }}</mat-label>
+                            <mat-select formControlName='attribute'>
+                                    <mat-option *ngFor='let select of attribute.selection' >{{ select.option |titlecase}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance='outline'>
+                            <mat-label>Description</mat-label>
+                            <textarea formControlName='description' matInput rows="5" cols="50"></textarea>
+                        </mat-form-field>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-card-content>
+            <mat-card-actions>
+                <button type="submit" mat-flat-button class='btn' color='primary' >Submit</button>
+                <button mat-flat-button class='clear btn' (click)='onClear()'> Clear</button>
+           
+            </mat-card-actions>
+        </form>
+        </mat-card>
+        
+    </div>
+</div>
